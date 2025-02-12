@@ -212,3 +212,30 @@ export const ModalContent = styled.div`
     font-weight: 400;
     font-style: normal;
 `;
+
+export const ModalImage = styled.img`
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    margin-bottom: 10px;
+`;
+
+export const NavigationButton = styled.button`
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    ${({ left }) => left && css`
+        left: 10px;
+    `}
+
+    ${({ right }) => right && css`
+        right: 10px;
+    `}
+`;
