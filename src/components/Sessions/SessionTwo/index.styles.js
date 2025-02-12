@@ -53,7 +53,6 @@ export const Container = styled.section`
   @media screen and (min-width: 1920px) {
 
   }
-}
 `;
 
 export const Text = styled.p`
@@ -121,7 +120,7 @@ export const Text = styled.p`
   }
 
   /* 4K e superiores (1920px e acima) */
-  @media screen and (min-width: 1920px) {
+  @media screen and (min-width: 1920 ▋
    
   }
 `;

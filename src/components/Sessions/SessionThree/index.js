@@ -18,7 +18,7 @@ function SessionThree() {
                 allowFullScreen
             />
             <ButtonWrapper>
-                <Button onClick={scrollToForm} type="text">Se torne nosso cliente</Button>
+                <Button onClick={scrollToForm} type="text">Torne-se nosso cliente</Button>
             </ButtonWrapper>
         </Container>
     )   

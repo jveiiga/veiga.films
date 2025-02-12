@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Modal from 'react-modal';
-import { Container, Title, ContainerPhotos, PhotoBox, CloseButton, ModalContent } from './index.styles';
+import { Container, Title, ContainerPhotos, PhotoBox, PhotoText, CloseButton, ModalContent } from './index.styles';
 
-// Artistas
-import img1 from '../../../assets/images/cases/belo.jpg';
-import img2 from '../../../assets/images/cases/mc.jpg';
-import img3 from '../../../assets/images/cases/gp.jpg';
-// Carros
-import img4 from '../../../assets/images/cases/bmw-carro.jpg';
-import img5 from '../../../assets/images/cases/bmw-moto.jpg';
-import img6 from '../../../assets/images/cases/audi.jpg';
-// Tatuagem
-import img7 from '../../../assets/images/cases/mulher-tatuagem.jpg';
-import img8 from '../../../assets/images/cases/trampo-tatuagem.jpg';
-import img9 from '../../../assets/images/cases/tatuando.jpg';
+// Import das imagens
+import img1 from '../../../assets/images/cases/kruguer.jpg';
+import img2 from '../../../assets/images/cases/preta.jpg';
+import img3 from '../../../assets/images/cases/alongamento.jpg';
+import img4 from '../../../assets/images/cases/work.jpg';
+import img5 from '../../../assets/images/cases/bruno-carro.jpg';
+import img6 from '../../../assets/images/cases/mega.jpg';
+import img7 from '../../../assets/images/cases/casal-nasa.jpg';
+import img8 from '../../../assets/images/cases/mamae-nenem.jpg';
+import img9 from '../../../assets/images/cases/minnie-sorrindo.jpg';
 
 Modal.setAppElement('#root'); // Define o elemento root para acessibilidade
 
@@ -24,19 +22,32 @@ function SessionSix() {
         threshold: 0.1,
     });
 
-    const photos = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+    const photos = [
+        { src: img1, text: 'Ensaio Pessoal' },
+        { src: img2, text: 'Sensual Artistico' },
+        { src: img3, text: 'Acadêmia' },
+        { src: img4, text: 'Trabalho' },
+        { src: img5, text: 'Influencers' },
+        { src: img6, text: 'Cantores' },
+        { src: img7, text: 'Casal' },
+        { src: img8, text: 'Familía' },
+        { src: img9, text: 'Nenêm' },
+    ];
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState('');
+    const [currentText, setCurrentText] = useState('');
 
-    const openModal = (image) => {
+    const openModal = (image, text) => {
         setCurrentImage(image);
+        setCurrentText(text);
         setModalIsOpen(true);
     };
 
     const closeModal = () => {
         setModalIsOpen(false);
         setCurrentImage('');
+        setCurrentText('');
     };
 
     return (
@@ -46,11 +57,13 @@ function SessionSix() {
                 {photos.map((photo, index) => (
                     <PhotoBox
                         key={index}
-                        image={photo}
+                        image={photo.src}
                         isVisible={inView}
                         delay={index * 0.5}
-                        onClick={() => openModal(photo)} // Define a função de clique
-                    />
+                        onClick={() => openModal(photo.src, photo.text)}
+                    >
+                        <PhotoText isVisible={inView}>{photo.text}</PhotoText>
+                    </PhotoBox>
                 ))}
             </ContainerPhotos>
             <Modal
@@ -58,21 +71,22 @@ function SessionSix() {
                 onRequestClose={closeModal}
                 style={{
                     overlay: { backgroundColor: 'rgba(0, 0, 0, 0.75)' },
-                    content: { 
-                        top: '50%', 
-                        left: '50%', 
-                        right: 'auto', 
-                        bottom: 'auto', 
-                        marginRight: '-50%', 
-                        transform: 'translate(-50%, -50%)', 
-                        maxWidth: '90%', 
-                        maxHeight: '90%' 
+                    content: {
+                        top: '50%',
+                        left: '50%',
+                        right: 'auto',
+                        bottom: 'auto',
+                        marginRight: '-50%',
+                        transform: 'translate(-50%, -50%)',
+                        maxWidth: '90%',
+                        maxHeight: '90%'
                     }
                 }}
             >
                 <ModalContent>
                     <CloseButton onClick={closeModal}>×</CloseButton>
                     <img src={currentImage} alt="" style={{ width: '100%', height: 'auto', maxHeight: '80vh' }} />
+                    <p>{currentText}</p>
                 </ModalContent>
             </Modal>
         </Container>

@@ -67,6 +67,15 @@ export const Text = styled.h2`
   margin-top: 5%;
   text-align: center; 
   z-index: 2;
+  border: 5px solid hsla(0, 0.00%, 40.00%, 0.59); /* #1 */
+  padding: 5px;
+  background: hsla(0, 0.00%, 20.00%, 0.35); /* #2 */
+  outline: 5px solid hsla(0, 0.00%, 100.00%, 0.55); /* #3 */
+  box-shadow:
+      0 0 0 10px hsla(0, 0.00%, 100.00%, 0.45), /* #4 AND INFINITY!!! (CSS3 only) */
+      0 0 0 15px hsla(0, 0.00%, 100.00%, 0.35);
+  
+
 
   /* Responsividade */
   @media (max-width: 1024px) {
