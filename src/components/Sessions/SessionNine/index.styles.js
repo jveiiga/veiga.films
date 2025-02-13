@@ -1,12 +1,10 @@
 import styled, { keyframes } from 'styled-components';
 
-const slideInFromRight = keyframes`
+const fadeIn = keyframes`
   0% {
-    transform: translateX(100%);
     opacity: 0;
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
   }
 `;
@@ -69,26 +67,24 @@ export const ContainerNumbers = styled.div`
 export const Box = styled.div``;
 
 export const Text = styled.h2`
-    font-size: 2rem;
-    color: white;
-    text-align: center;
-    box-sizing: border-box;
+    /* flex-wrap: wrap; */
+    color: #FFF;
     font-family: "Climate Crisis", serif;
     font-optical-sizing: auto;
     font-weight: 400;
-    font-size: 6rem;
-    color: #FFF;
+    font-style: normal;
+    font-size: 100px;
     text-transform: uppercase;
+    margin: 0 0 5% 0;
     opacity: 0;
-    transform: translateX(100%);
-    transition: transform 1s ease-out, opacity 1s ease-out;
+    transition: opacity 1s ease-out;
 
     &.visible {
-        animation: ${slideInFromRight} 1s ease-out forwards;
+        animation: ${fadeIn} 1s ease-out forwards;
     }
 
     @media screen and (max-width: 320px) {
-        font-size: 28px;
+        font-size: 28px;;
     }
 
     @media screen and (min-width: 321px) and (max-width: 576px) {
@@ -364,6 +360,7 @@ export const YearsNumber = styled.p`
     @media screen and (min-width: 992px) and (max-width: 1199px) {
         font-size: 60px;
     }
-`;
+`;  
+
 
 

@@ -48,7 +48,22 @@ export const Container = styled.section`
 
     /* Responsividade */
     @media screen and (max-width: 320px) {
-      padding: 0 5%; /* Adiciona um espaçamento lateral em tablets */
+      margin: 0 0 7.5% 0;
+  }
+
+  /* Small devices (celulares, 320px - 576px) */
+  @media screen and (min-width: 321px) and (max-width: 576px) {
+    margin: 0 0 7.5% 0;
+
+  }
+
+  /* Medium devices (tablets menores, 577px - 767px) */
+  @media screen and (min-width: 577px) and (max-width: 767px) {
+
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+  
     }
 `;
 
