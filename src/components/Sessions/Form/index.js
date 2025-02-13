@@ -2,7 +2,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Button, ButtonWrapper, Container, ContainerForm, FormGroup, Input, Label, Text, Textarea } from "./index.styles";
 
-function SessionEight() {
+function Form() {
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.5,
@@ -38,4 +38,4 @@ function SessionEight() {
     );
 }
 
-export default SessionEight;
+export default Form;

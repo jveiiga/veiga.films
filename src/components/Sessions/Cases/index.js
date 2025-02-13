@@ -78,7 +78,7 @@ import img61 from '../../../assets/images/cases/nenem-s5.jpg';
 
 Modal.setAppElement('#root'); // Define o elemento root para acessibilidade
 
-function SessionSix() {
+function Cases() {
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -168,4 +168,4 @@ function SessionSix() {
     );
 }
 
-export default SessionSix;
+export default Cases;

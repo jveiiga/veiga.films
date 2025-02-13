@@ -1,6 +1,6 @@
 import { Button, ButtonWrapper, Container, ContainerVideo } from "./index.styles";
 
-function SessionThree() {
+function VideoPresentation() {
     const scrollToForm = () => {
         const formSection = document.getElementById('form-section');
         if (formSection) {
@@ -24,4 +24,4 @@ function SessionThree() {
     )   
 }
 
-export default SessionThree;
+export default VideoPresentation;

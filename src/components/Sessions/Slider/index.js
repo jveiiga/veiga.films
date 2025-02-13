@@ -16,7 +16,7 @@ const slides = [
   { image: images[6], text: "Tatuagens" },
 ];
 
-function SessionSix() {
+function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -46,4 +46,4 @@ function SessionSix() {
   );
 }
 
-export default SessionSix;
+export default Slider;

@@ -2,7 +2,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Container, Title, Text } from './index.styles';
 
-function SessionFive() {
+function Differential() {
   // Usando useInView para detectar quando o componente está visível
   const [ref, inView] = useInView({
     triggerOnce: true, // A animação só acontece uma vez
@@ -21,4 +21,4 @@ function SessionFive() {
   );
 }
 
-export default SessionFive;
+export default Differential;

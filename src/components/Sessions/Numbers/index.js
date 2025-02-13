@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 import { Brands, BrandsNumber, ContainerNumbers, Container, ContainerCentral, ContainerTitle, Days, DaysNumber, Prod, ProdNumber, Text, Videos, VideosNumber, Years, YearsNumber, Box } from "./index.styles";
 
-function SessionNine() {
+function Numbers() {
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.5,
@@ -14,7 +14,7 @@ function SessionNine() {
             <ContainerCentral>
                 <ContainerTitle>
                     <Text className={inView ? 'visible' : ''}>
-                        retrospectiva 2024
+                        retrospectiva<br/> 2024
                     </Text>
                 </ContainerTitle>
                 <ContainerNumbers>
@@ -54,4 +54,4 @@ function SessionNine() {
     );
 }
 
-export default SessionNine;
+export default Numbers;

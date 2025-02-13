@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Container, Text } from "./index.styles";
 
-function SessionTwo() {
+function InitialPresentation() {
     const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.5,
@@ -35,5 +35,5 @@ function SessionTwo() {
     );
 }
 
-export default SessionTwo;
+export default InitialPresentation;
 
