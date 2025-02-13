@@ -120,7 +120,7 @@ export const Text = styled.p`
   }
 
   /* 4K e superiores (1920px e acima) */
-  @media screen and (min-width: 1920 ▋
+  @media screen and (min-width: 1920) {
    
   }
 `;

@@ -5,7 +5,6 @@ export const ContainerFooter = styled.section`
   display: flex;
   padding: 5% 0 5% 0;
 
-
   /* Responsividade */
   /* Extra small devices (mini celulares, menor que 320px) */
   @media screen and (max-width: 320px) {
@@ -47,7 +46,7 @@ export const ContainerFooter = styled.section`
   }
 
   /* 4K e superiores (1920px e acima) */
-  @media screen and (min-width: 1920 ▋
+  @media screen and (min-width: 1920) {
    
   }
 `
@@ -70,12 +69,13 @@ export const Text = styled.p`
   /* Small devices (celulares, 320px - 576px) */
   @media screen and (min-width: 321px) and (max-width: 576px) {
     justify-content: flex-start;
+    font-size: 20px;
   }
 
   /* Medium devices (tablets menores, 577px - 767px) */
   @media screen and (min-width: 577px) and (max-width: 767px) {
     justify-content: flex-start;
-
+    font-size: 26px;
   }
 
   /* Large devices (tablets maiores/iPads, 768px - 991px) */
@@ -95,6 +95,20 @@ export const SocialMedia = styled.div`
 export const TextFollow = styled.p`
     color: #FFF;
     font-size: 26px;
+
+  @media screen and (max-width: 320px) {
+    padding: 10% 10%;
+  }
+
+  /* Small devices (celulares, 320px - 576px) */
+  @media screen and (min-width: 321px) and (max-width: 576px) {
+    font-size: 20px;
+  }
+
+  /* Medium devices (tablets menores, 577px - 767px) */
+  @media screen and (min-width: 577px) and (max-width: 767px) {
+    font-size: 26px;
+  }
 `
 
 export const ContainerIcons = styled.div`
@@ -107,4 +121,18 @@ export const ContainerIcons = styled.div`
 export const TextReserved = styled.p`
     color: #FFF;
     font-size: 26px;
+
+  @media screen and (max-width: 320px) {
+    padding: 10% 10%;
+  }
+
+  /* Small devices (celulares, 320px - 576px) */
+  @media screen and (min-width: 321px) and (max-width: 576px) {
+    font-size: 20px;
+  }
+
+  /* Medium devices (tablets menores, 577px - 767px) */
+  @media screen and (min-width: 577px) and (max-width: 767px) {
+    font-size: 26px;
+  }
 `

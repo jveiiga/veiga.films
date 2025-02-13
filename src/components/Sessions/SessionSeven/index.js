@@ -160,7 +160,7 @@ function SessionSix() {
                     <CloseButton onClick={closeModal}>×</CloseButton>
                     <NavigationButton onClick={prevPhoto} left>‹</NavigationButton>
                     <ModalImage src={currentPhotos[currentIndex]} alt={`${currentText} - ${currentIndex + 1}`} />
-                    <NavigationButton onClick={nextPhoto} right>›</NavigationButton>    
+                    <NavigationButton onClick={nextPhoto} right>›</NavigationButton>
                     <p>{currentText}</p>
                 </ModalContent>
             </Modal>

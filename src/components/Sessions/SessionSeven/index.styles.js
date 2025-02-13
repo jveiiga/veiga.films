@@ -44,7 +44,7 @@ export const Container = styled.section`
     flex-direction: column;
     width: 100vw;
     min-height: 100vh;
-    margin: 7.5% 0;
+    margin: 7.5% 0 0 0;
 
     /* Responsividade */
     @media screen and (max-width: 320px) {
@@ -68,9 +68,27 @@ export const Title = styled.h2`
     ${({ isVisible }) => isVisible && css`
         animation: ${slideUp} 2s ease-out forwards;
     `};
-    
-    @media (max-width: 768px) {
-        font-size: 28px;
+
+    @media screen and (max-width: 320px) {
+    font-size: 28px;
+  }
+
+  /* Small devices (celulares, 320px - 576px) */
+  @media screen and (min-width: 321px) and (max-width: 576px) {
+    font-size: 28px;
+  }
+
+  /* Medium devices (tablets menores, 577px - 767px) */
+  @media screen and (min-width: 577px) and (max-width: 767px) {
+    font-size: 50px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+      font-size: 80px;
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1358px) {
+      font-size: 80px;
     }
 `;
 

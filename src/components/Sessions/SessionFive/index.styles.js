@@ -1,48 +1,118 @@
 import styled, { keyframes } from 'styled-components';
 
-// Animação de fade-in
-const fadeIn = keyframes`
+// Animação para o Title (vindo da direita)
+const slideInFromRight = keyframes`
   from {
+    transform: translateX(100%);
     opacity: 0;
   }
   to {
+    transform: translateX(0);
     opacity: 1;
   }
 `;
 
-// Estilos do carrossel
-export const CarouselContainer = styled.section`
-  position: relative;
-  width: 100vw;
-  height: 60vh;
-  overflow: hidden;
-  margin: 0 0 7.5% 0;
+// Animação para o Text (vindo da esquerda)
+const slideInFromLeft = keyframes`
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 `;
 
-export const Slide = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+export const Container = styled.section`
   width: 100%;
-  height: 100%;
-  background-image: url(${({ image }) => image});
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
+  padding: 0 0 7.5% 0;
+  overflow: hidden; /* Garante que as animações não vazem */
+`;
 
-  &.active {
-    opacity: 1;
-    animation: ${fadeIn} 1s ease-in-out; /* Aplica a animação fadeIn */
+export const Title = styled.h2`
+  font-family: "Climate Crisis", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
+  line-height: 1.5;
+  color: #FFF;
+  text-transform: upperCase;
+  margin: 7.5% 0 2% 10%;
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateX(100%); /* Começa fora da tela à direita */
+  animation: ${slideInFromRight} 1s ease-out forwards;
+  animation-play-state: ${({ isVisible }) => (isVisible ? 'running' : 'paused')};
+
+  /* Responsividade */
+  @media screen and (max-width: 320px) {
+    font-size: 28px;
+    margin: 10% 5% 3% 5%;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 321px) and (max-width: 576px) {
+    font-size: 30px;
+    margin: 10% 5% 3% 5%;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 577px) and (max-width: 767px) {
+    font-size: 50px;
+    margin: 10% 5% 3% 5%;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    font-size: 70px;
+    margin: 10% 5% 3% 5%;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 992px) and (max-width: 1358px) {
+      font-size: 80px;
+    }
+`;
+
+export const Text = styled.p`
+  font-family: "Didact Gothic", serif;
+  font-size: 18px;
+  line-height: 2.3;
+  color: #FFF;
+  margin: 0 0 0 10%;
+  width: 30%;
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateX(-100%); /* Começa fora da tela à esquerda */
+  animation: ${slideInFromLeft} 1s ease-out forwards;
+  animation-play-state: ${({ isVisible }) => (isVisible ? 'running' : 'paused')};
+
+  @media screen and (max-width: 320px) {
+    font-size: 19px;
+    line-height: 1.5;
+    margin: 0 5% 0 5%;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 321px) and (max-width: 576px) {
+    font-size: 19px;
+    line-height: 1.5;
+    margin: 0 5% 0 5%;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 577px) and (max-width: 767px) {
+    font-size: 19px;
+    line-height: 1.6;
+    margin: 0 5% 0 5%;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    font-size: 19px;
+    line-height: 1.6;
+    margin: 0 5% 0 5%;
+    width: 90%;
   }
 `;
 
-export const TextOverlay = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 3rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-`;

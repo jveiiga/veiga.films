@@ -25,7 +25,7 @@ export const BackGroundImage = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Preto com 50% de opacidade */
+    background-color: rgba(0, 0, 0, 0.20); /* Preto com 50% de opacidade */
     z-index: 1; 
   }
 
@@ -46,11 +46,11 @@ export const Logo = styled.div`
 
   /* Responsividade */
   @media (max-width: 768px) {
-    width: 30vw;
+    width: 60vw;
   }
 
   @media (max-width: 480px) {
-    width: 40vw;
+    width: 60vw;
   }
 
   img {

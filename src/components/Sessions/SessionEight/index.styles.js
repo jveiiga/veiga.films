@@ -1,4 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slideInFromLeft = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.section`
   width: 100vw;
@@ -9,15 +20,22 @@ export const Container = styled.section`
 `;
 
 export const Text = styled.h2`
-    width: 40%;
+    flex-wrap: wrap;
     color: #FFF;
     font-family: "Climate Crisis", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     font-size: 100px;
-    text-transform: upperCase;
+    text-transform: uppercase;
     margin: 0 0 5% 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+
+    &.visible {
+        animation: ${slideInFromLeft} 1s ease-out forwards;
+    }
 
     /* Responsividade */
     @media screen and (max-width: 320px) {
@@ -39,14 +57,18 @@ export const Text = styled.h2`
     }
 
     @media screen and (min-width: 768px) and (max-width: 991px) {
-      font-size: 80px;
+      font-size: 70px;
       margin: 10% 5% 3% 5%;
       width: 90%;
     }
-` 
+
+    @media screen and (min-width: 992px) and (max-width: 1358px) {
+      font-size: 80px;
+    }
+`;
 
 export const ContainerForm = styled.form`  
-    width: 40%;
+    width: 900px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

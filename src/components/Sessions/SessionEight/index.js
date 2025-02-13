@@ -1,9 +1,16 @@
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import { Button, ButtonWrapper, Container, ContainerForm, FormGroup, Input, Label, Text, Textarea } from "./index.styles";
 
 function SessionEight() {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.5,
+    });
+
     return (
-        <Container id="form-section">
-            <Text>Fale com a gente</Text>
+        <Container ref={ref} id="form-section">
+            <Text className={inView ? 'visible' : ''}>Fale com a gente</Text>
             <ContainerForm
                 action="https://formsubmit.co/7aea09bf210ffe2891b141e48213e3ab" method="POST"
             >
@@ -14,7 +21,7 @@ function SessionEight() {
                     <Input type="email" id="email" name="email" placeholder="Email" required />
                 </FormGroup>
                 <FormGroup>
-                    <Input type="tel" id="phone" name="phone" placeholder="DDD+Telefone"required />
+                    <Input type="tel" id="phone" name="phone" placeholder="DDD+Telefone" required />
                 </FormGroup>
                 <FormGroup>
                     <Input type="text" id="company" name="company" placeholder="É Empresa?" />

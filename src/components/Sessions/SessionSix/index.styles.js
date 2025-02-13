@@ -1,48 +1,48 @@
 import styled, { keyframes } from 'styled-components';
 
-// Animação de movimento da esquerda para a direita
-const marquee = keyframes`
-  0% {
-    transform: translateX(0%);
+// Animação de fade-in
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
   }
-  100% {
-    transform: translateX(-100%);
+  to {
+    opacity: 1;
   }
 `;
 
-export const Container = styled.section`
-  width: 100vw;
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden; 
+// Estilos do carrossel
+export const CarouselContainer = styled.section`
   position: relative;
-  background-color: #FFF; 
-  color: #000; 
-
-    /* Responsividade */
-    @media screen and (max-width: 320px) {
-      margin: 20% 0 20% 0;
-    }
-
-    @media screen and (min-width: 321px) and (max-width: 576px) {
-       margin: 7% 0 0 0;
-    }
-
-    @media screen and (min-width: 577px) and (max-width: 767px) {
-       margin: 10% 0 0 0;
-    }
-
-    @media screen and (min-width: 768px) and (max-width: 991px) {
-      margin: 10% 0 0 0;
-    }
+  width: 100vw;
+  height: 60vh;
+  overflow: hidden;
+  margin: 0 0 7.5% 0;
 `;
 
-export const MarqueeText = styled.div`
-  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
-  display: inline-block;
-  animation: ${marquee} 60s linear infinite; /* Animação de 20 segundos em loop */
-  font-family: "Didact Gothic", serif;
-  font-size: 1.7rem;
-  text-transform: uppercase;
+export const Slide = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(${({ image }) => image});
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+    animation: ${fadeIn} 1s ease-in-out; /* Aplica a animação fadeIn */
+  }
+`;
+
+export const TextOverlay = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;

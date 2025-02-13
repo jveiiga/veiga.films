@@ -5,3 +5,4 @@ export { default as SessionFour } from './SessionFive';
 export { default as SessionFive } from './SessionFour';
 export { default as SessionSix } from './SessionSix';
 export { default as SessionSeven } from './SessionSeven';
+export { default as SessionNine } from './SessionNine';
